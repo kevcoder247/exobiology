@@ -8,5 +8,16 @@
 </head>
 <body>
   <h1>Index</h1>
+
+  <a href="/exobiology/new">Create New Scientist</a>
+
+  <!-- <h2>Name: <%= scientist[0].name %></h2>
+  <h2>Description: <%= scientist[0].description %></h2> -->
+
+<% for(let i = 0; i < scientist.length; i++){ %>
+  <p>Name: <%= scientist[i].name %> </p>
+  <p>Description: <%= scientist[i].description %> </p>
+ 
+<% } %>
 </body>
 </html>
