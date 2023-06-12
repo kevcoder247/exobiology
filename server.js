@@ -9,11 +9,14 @@ const PORT = 3000;
 //          ROUTES
 //======================================
 //INDEX
-app.get('/', (req, res) => {
+app.get('/exobiology', (req, res) => {
   res.render('index.ejs')
 })
 
 //NEW
+app.get('/exobiology/new', (req, res) => {
+  res.render('new.ejs')
+})
 
 
 //======================================
