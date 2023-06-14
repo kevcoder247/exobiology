@@ -30,7 +30,7 @@ app.get('/exobiology/new', (req, res) => {
 
 //CREATE 
 app.post('/exobiology/', (req, res) => {
-  console.log('New Scientist:', req.body);
+  // console.log('New Scientist:', req.body);
   scientist.push(req.body);
   res.redirect('/exobiology');
 })
@@ -39,6 +39,21 @@ app.post('/exobiology/', (req, res) => {
 app.delete("/exobiology/:id", (req, res) => {
   scientist.splice(req.params.id, 1);
   res.redirect('/exobiology');
+})
+
+//UPDATE==================
+app.put('/exobiology/:id', (req, res) => {
+  scientist[req.params.id] = req.body
+  res.redirect('/exobiology')
+})
+
+
+//EDIT
+app.get('/exobiology/:id', (req, res) => {
+  res.render("edit.ejs",{
+    scientist: scientist[req.params.id],
+    index:req.params.id,
+  })
 })
 
 //======================================
